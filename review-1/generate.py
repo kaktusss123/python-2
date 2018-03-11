@@ -22,17 +22,17 @@ def get_next(pairs, seed):
 
 # Выполняет вывод
 def write(pairs, seed, length, out=None):
-    if out == None:                         # Если --output не задан
+    if out == None:  # Если --output не задан
         for i in range(length):
-            next = get_next(pairs, seed)    # Получаю следующие слова
-            print(seed, end=' ')            # Вывожу seed через обычный print()
-            seed = random.choice(next)      # И изменяю сид на одно из следующих слов
-    else:                                   # Если --output задан
+            next = get_next(pairs, seed)  # Получаю следующие слова
+            print(seed, end=' ')  # Вывожу seed через обычный print()
+            seed = random.choice(next)  # И изменяю сид на одно из следующих слов
+    else:  # Если --output задан
         for i in range(length):
             next = get_next(pairs, seed)
-            out.write(seed + ' ')           # Пишу в out через пробел
+            out.write(seed + ' ')  # Пишу в out через пробел
             seed = random.choice(next)
-        # out.write('\n')   Для личных целей
+        out.write('\n')  # Для личных целей
 
 
 if __name__ == '__main__':

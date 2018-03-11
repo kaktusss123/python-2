@@ -1,4 +1,5 @@
 import argparse
+import operator
 import sys
 
 
@@ -39,8 +40,7 @@ def parse(words, pairs):
 def write(pairs, path):
     with open(path + 'model.txt', 'w') as f:  # PATH_TO_MODEL не может быть None
         for pair in pairs:
-            f.write(
-                pair[0] + ' ' + pair[1] + ' ' + str(pairs[pair]) + '\n')  # Каждую пару запиываем всместе с счетчиком
+            f.write(pair[0] + ' ' + pair[1] + ' ' + str(pairs[pair]) + '\n')  # Каждую пару запиываем всместе с счетчиком
 
 
 if __name__ == '__main__':
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     # Если --dir не задан, то считывать из stdin
     if PATH_TO_INPUT != None:
-        f = open(PATH_TO_INPUT + 'input.txt')
+        f = open(PATH_TO_INPUT + 'Обручкова.txt')
     else:
         f = sys.stdin
 
