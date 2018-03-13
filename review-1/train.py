@@ -73,3 +73,4 @@ if __name__ == '__main__':
     write(pairs, PATH_TO_MODEL)  # Записывает модель в файл
 
     f.close()
+    print('Done!')
