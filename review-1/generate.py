@@ -66,3 +66,5 @@ if __name__ == '__main__':
             write(pairs, seed, LENGTH, out)
         else:
             write(pairs, seed, LENGTH)  # Иначе не передаем параметр out
+
+    print('Done!')
