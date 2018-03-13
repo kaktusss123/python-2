@@ -1,5 +1,4 @@
 import argparse
-import operator
 import sys
 
 
@@ -64,12 +63,13 @@ if __name__ == '__main__':
         f = sys.stdin
 
     pairs = {}
-    text = []
+    prev = ''
     for line in f:
         words = to_words(line, args.lc)  # Разбивает строку на слова, при --lc приводит к lowercase
         words = clear(words)  # Убирает все, что не является буквами
-        text.extend(words)  # Текст, разбитый по словам и очищенный от мусора
-    pairs = parse(text, pairs)  # Создает модель
+        words.insert(0, prev)
+        prev = words[-1]
+        pairs = parse(words, pairs)  # Создает модель
     write(pairs, PATH_TO_MODEL)  # Записывает модель в файл
 
     f.close()
