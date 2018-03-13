@@ -39,7 +39,8 @@ def parse(words, pairs):
 def write(pairs, path):
     with open(path + 'model.txt', 'w') as f:  # PATH_TO_MODEL не может быть None
         for pair in pairs:
-            f.write(pair[0] + ' ' + pair[1] + ' ' + str(pairs[pair]) + '\n')  # Каждую пару запиываем всместе с счетчиком
+            f.write(
+                pair[0] + ' ' + pair[1] + ' ' + str(pairs[pair]) + '\n')  # Каждую пару запиываем всместе с счетчиком
 
 
 if __name__ == '__main__':
