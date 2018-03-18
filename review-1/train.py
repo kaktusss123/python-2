@@ -58,7 +58,7 @@ if __name__ == '__main__':
     PATH_TO_INPUT = args.dir
 
     # Если --dir не задан, то считывать из stdin
-    if PATH_TO_INPUT != None:
+    if PATH_TO_INPUT is not None:
         f = open(PATH_TO_INPUT + 'Обручкова.txt')
     else:
         f = sys.stdin

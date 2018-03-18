@@ -22,7 +22,7 @@ def get_next(pairs, seed):
 
 # Выполняет вывод
 def write(pairs, seed, length, out=None):
-    if out == None:  # Если --output не задан
+    if out is None:  # Если --output не задан
         for i in range(length):
             next = get_next(pairs, seed)  # Получаю следующие слова
             print(seed, end=' ')  # Вывожу seed через обычный print()
@@ -58,13 +58,12 @@ if __name__ == '__main__':
     with open(PATH_TO_MODEL + 'model.txt') as f:
         pairs = get_model(f)
 
-        if seed == None:  # Если --seed не задан, выбираем случайное первое слово из пар
+        if seed is None:  # Если --seed не задан, выбираем случайное первое слово из пар
             seed = random.choice(pairs)[0]
 
-        if PATH_TO_OUTPUT != None:  # Если задан --output, то используем его
+        out = None
+        if PATH_TO_OUTPUT is not None:  # Если задан --output, то используем его
             out = open(PATH_TO_OUTPUT + 'output.txt', 'a')
-            write(pairs, seed, LENGTH, out)
-        else:
-            write(pairs, seed, LENGTH)  # Иначе не передаем параметр out
+        write(pairs, seed, LENGTH, out)
 
     print('Done!')
