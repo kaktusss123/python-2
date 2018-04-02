@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     # Если --dir не задан, то считывать из stdin
     if PATH_TO_INPUT is not None:
-        f = open(PATH_TO_INPUT + 'Обручкова.txt')
+        f = open(PATH_TO_INPUT + 'input.txt')
     else:
         f = sys.stdin
 
